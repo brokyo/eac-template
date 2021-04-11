@@ -16,6 +16,7 @@
 
 <script>
 var _ = require('lodash')
+var p5 = require('p5')
 import { patch } from '@/audio/synth.js'
 import { composition } from '@/audio/composition-config.js'
 
@@ -23,8 +24,8 @@ export default {
   data() {
     return {
       started: false,
-      iteration: '01',
-      subtitle: 'The Same Recurring Dream'
+      iteration: '0',
+      subtitle: null
     }
   },
   methods: {
@@ -34,6 +35,7 @@ export default {
       await Tone.Transport.start()
       Tone.Transport.bpm.value = 60
       this.scheduleAudio()
+      this.visualStart()
     },
     scheduleAudio() {
       let lastNote = _.last(composition.events);
@@ -63,7 +65,18 @@ export default {
       part.start();
     },
     visualStart() {
+      const s = (sketch) => {
 
+        sketch.setup = function() {
+          sketch.createCanvas(sketch.windowWidth, sketch.windowHeight)   
+        }
+
+        sketch.draw = function() {
+          sketch.background(255)
+        }
+      }
+
+      let sketch = new p5(s, document.getElementById('canvas'))
     }
   }
 }
