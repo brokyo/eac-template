@@ -83,17 +83,6 @@ export default {
 </script>
 
 <style>
-@font-face {
-  font-family: "BebasNeue";
-  src: local("BebasNeue"),
-    url(fonts/Bebas_Neue/BebasNeue-Regular.ttf);
-}
-
-@font-face {
-  font-family: "RobotoSlab";
-  src: local("RobotoSlab"),
-    url(fonts/Roboto_Slab/static/RobotoSlab-Light.ttf);
-}
 
 #logo {
   opacity: 0.5;
@@ -119,12 +108,12 @@ html {
 
 h1 {
   margin-top: 40px;;
-  font-family: 'BebasNeue', cursive;
+  font-family: 'Bebas Neue', cursive;
   font-size: 44px;
 }
 
 p {
-  font-family: 'RobotoSlab', serif;
+  font-family: 'Roboto Slab', serif;
   text-transform: lowercase;
 }
 
